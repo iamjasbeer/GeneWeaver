@@ -1,4 +1,3 @@
-
 def count_mismatches(sequence_a, sequence_b):
     """
     Count differences between two DNA sequences.
