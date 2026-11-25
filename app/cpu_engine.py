@@ -1,6 +1,17 @@
 
 from app.scoring import count_mismatches
 
+def has_valid_pam(pam: str) -> bool:
+    """
+    Check whether a 3-base PAM matches NGG.
+    N represents any concrete DNA base: A, T, G, or C.
+    """
+    pam = pam.upper()
+
+    if len(pam) != 3:
+        return False
+
+    return pam[0] in "ATGC" and pam[1:] == "GG"
 
 def find_candidates(sequence, guide, max_mismatches=2):
 
