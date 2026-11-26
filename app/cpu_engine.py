@@ -32,6 +32,9 @@ def find_candidates(sequence, guide, max_mismatches=2):
 
         end = start + guide_length
 
+        target = sequence[start:end]
+        pam = sequence[end:end + 3]
+
         # Extract DNA window
         window = sequence[start:end]
 
